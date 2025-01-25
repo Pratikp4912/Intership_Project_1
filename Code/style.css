@@ -1,0 +1,178 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f9f9f9;
+}
+
+/* Header Section */
+header {
+    background-color: #0078ff;
+    color: white;
+    padding: 20px 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2rem;
+}
+
+/* Main Content */
+main {
+    flex: 1;
+    padding: 20px 10px;
+}
+
+.bucket-list {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.bucket-list h2 {
+    font-size: 2rem;
+    color: #0078ff;
+    margin-bottom: 20px;
+}
+
+.bucket-list ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 15px;
+}
+
+.bucket-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 1.2rem;
+    transition: transform 0.2s;
+}
+
+.bucket-list li:hover {
+    transform: translateY(-5px);
+}
+
+/* Item Status Styles */
+.completed {
+    background-color: #d4edda;
+    color: #155724;
+    border-left: 5px solid #28a745;
+}
+
+.in-progress {
+    background-color: #fff3cd;
+    color: #856404;
+    border-left: 5px solid #ffc107;
+}
+
+.not-started {
+    background-color: #f8d7da;
+    color: #721c24;
+    border-left: 5px solid #dc3545;
+}
+
+.list-item {
+    display: flex;
+    align-items: center;
+}
+
+.list-item .icon {
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+
+/* Footer Section */
+footer {
+    background-color: #0078ff;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 1rem;
+    border-top: 5px solid #005bb5;
+    overflow: hidden; /* Ensure smooth scrolling with hidden overflow */
+    position: relative;
+    height: 50px;
+}
+
+/* Scrolling Animation for Footer Text */
+footer p {
+    display: inline-block;
+    position: absolute;
+    white-space: nowrap; /* Prevent line breaks */
+    animation: scrollText 10s linear infinite; /* Define animation */
+    font-size: 1.2rem;
+}
+
+/* Keyframes for Scrolling Animation */
+@keyframes scrollText {
+    0% {
+        transform: translateX(100%); /* Start off-screen (right) */
+    }
+    100% {
+        transform: translateX(-100%); /* End off-screen (left) */
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .bucket-list ul {
+        gap: 10px;
+    }
+
+    .bucket-list li {
+        font-size: 1rem;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .list-item {
+        margin-bottom: 5px;
+    }
+
+    .list-item .icon {
+        margin-right: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    .bucket-list h2 {
+        font-size: 1.5rem;
+    }
+
+    footer {
+        font-size: 0.9rem;
+    }
+}
